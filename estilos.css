@@ -1,0 +1,827 @@
+/* ==========================================
+   RESET & ESTILOS GENERALES
+   ========================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #0d0d0d;
+  color: #ffffff;
+  font-family: 'Archivo', sans-serif;
+  line-height: 1.5;
+  padding: 20px 163px;
+  max-width: 1920px;
+}
+
+/* ==========================================
+   CABECERA Y NAVEGACIÓN 
+   ========================================== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0 163px 0;
+}
+
+nav {
+  display: flex;
+  gap: 30px;
+}
+
+/* ==========================================
+   ELEMENTOS GENERALES
+   ========================================== */
+.logo {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.logo span {
+  color: #ff1a1a;
+}
+
+.boton-head {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 700;
+  font-family: 'Archivo', sans-serif;
+  letter-spacing: 1.5px;
+  transition: opacity 0.2s ease;
+}
+
+.boton-head:hover {
+  opacity: 0.7;
+}
+
+/* ==========================================
+   SECCIÓN FOTO 
+   ========================================== */
+.seccion-foto {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 48px;
+  margin-bottom: 96px;
+}
+
+.titulo-principal {
+  font-family: 'Archivo', sans-serif;
+  font-size: 5rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  max-width: 250px;
+  word-wrap: break-word;
+}
+
+.dot-red {
+  color: #ff1a1a;
+}
+
+.col-foto {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
+.foto-perfil {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  filter: grayscale(20%) contrast(105%);
+}
+
+.col-descripcion {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1;
+}
+
+.texto-serif {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: #cccccc;
+  line-height: 1.6;
+}
+
+.texto-serif.destacado {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* ==========================================
+   SECCIÓN HOLA
+   ========================================== */
+.seccion-hola {
+  margin-bottom: 96px;
+  max-width: 500px;
+}
+
+.titulo-hola {
+  font-family: 'Archivo', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 900;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  letter-spacing: -0.5px;
+}
+
+.quote-red {
+  color: #ff1a1a;
+  font-family: 'Archivo', sans-serif;
+  margin-right: 4px;
+}
+
+.texto-hola {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ==========================================
+   SECCIÓN CLIENTES 
+   ========================================== */
+.seccion-clientes {
+  margin-bottom: 96px;
+}
+
+.titulo-seccion {
+  font-family: 'Archivo', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin-bottom: 32px;
+  text-transform: uppercase;
+}
+
+.grid-clientes {
+  display: flex;
+  gap: 32px;
+}
+
+.card-cliente {
+  background-color: #f4f3ef;
+  flex: 1;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  border-radius: 2px;
+}
+
+.card-cliente img {
+  max-width: 85%;
+  max-height: 85%;
+  object-fit: contain;
+}
+
+.card-cliente img.logo-mi-mejor-receta {
+  width: 200px;
+  height: 106px;
+}
+
+.card-cliente img.logo-gabriel {
+  width: 247px;
+  height: 101px;
+}
+
+.card-cliente img.logo-geografica {
+  width: 232px;
+  height: 115px;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-top: 64px;
+  border-top: 1px solid #1a1a1a;
+}
+
+.copyright {
+  font-family: 'Archivo', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 900;
+  line-height: 1.4;
+  letter-spacing: 1px;
+}
+
+.copy-symbol {
+  color: #ff1a1a;
+}
+
+.social-links {
+  display: flex;
+  gap: 64px;
+}
+
+.social-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Archivo', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: opacity 0.2s ease;
+}
+
+.social-links a:hover {
+  opacity: 0.7;
+}
+
+/* ==========================================
+   RESPONSIVE 
+   ========================================== */
+@media (max-width: 992px) {
+  body {
+    padding: 24px 32px;
+  }
+
+  .seccion-foto {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  .titulo-principal {
+    font-size: 3.5rem;
+    max-width: 100%;
+  }
+
+  .grid-clientes {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
+  }
+
+  nav {
+    gap: 24px;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+  }
+
+  .social-links {
+    gap: 32px;
+  }
+}
+
+/* ==========================================
+   PORFOLIO
+   ========================================== */
+:root {
+  --bg-dark: #0d0d0d;
+  --text-white: #ffffff;
+  --accent-red: #ff1a1a;
+  --card-bg: #d9d9d9;
+  --font-heading: 'Archivo', sans-serif;
+  --font-body: 'Libre Baskerville', serif;
+}
+
+.page-portfolio {
+  overflow-x: hidden;
+}
+
+.page-portfolio .dot,
+.page-portfolio .red-symbol {
+  color: var(--accent-red);
+}
+
+.page-portfolio .red-symbol {
+  font-weight: bold;
+}
+
+.page-portfolio .bio-text {
+  color: var(--text-white);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.page-portfolio .bio-text p {
+  margin-bottom: 16px;
+}
+
+.page-portfolio .bio-text p:last-child {
+  margin-bottom: 0;
+}
+
+.page-portfolio .badge-container {
+  position: relative;
+}
+
+.page-portfolio .red-badge {
+  position: absolute;
+  z-index: 2;
+  right: 12px;
+  bottom: 12px;
+  width: 16px;
+  height: 16px;
+  background-color: var(--accent-red);
+}
+
+.page-portfolio .card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: var(--card-bg);
+}
+
+.page-portfolio .card img,
+.page-portfolio .card video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.page-portfolio nav a {
+  color: var(--text-white);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.page-portfolio nav a:hover {
+  color: var(--accent-red);
+}
+
+.page-portfolio main#porfolio {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.page-portfolio main#porfolio > h1 {
+  max-width: 450px;
+  margin-bottom: 20px;
+  font-size: 54px;
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -1px;
+}
+
+.page-portfolio #principales {
+  display: flex;
+  gap: 16px;
+  height: 380px;
+}
+
+.page-portfolio #principales .card {
+  flex: 1;
+}
+
+.page-portfolio #principales .card:nth-child(4) {
+  flex: 0.5;
+}
+
+.page-portfolio #pequenas-piezas {
+  display: flex;
+  gap: 16px;
+  height: 100px;
+}
+
+.page-portfolio #pequenas-piezas .card {
+  flex: 1;
+}
+
+.page-portfolio #trabajo-destacado {
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
+}
+
+.page-portfolio #trabajo-destacado .col-left {
+  display: flex;
+  flex: 2;
+  gap: 16px;
+}
+
+.page-portfolio #trabajo-destacado .card.large {
+  flex: 1.2;
+  height: 360px;
+}
+
+.page-portfolio #trabajo-destacado .stacked-cards {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.page-portfolio #trabajo-destacado .stacked-cards .card {
+  height: calc(50% - 8px);
+}
+
+.page-portfolio #trabajo-destacado .col-right {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 20px;
+}
+
+.page-portfolio #video {
+  display: flex;
+  width: 100%;
+}
+
+.page-portfolio #video .video-card {
+  width: 100%;
+  height: 400px;
+}
+
+.page-portfolio #libro h2 {
+  margin-bottom: 16px;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.page-portfolio .book-embed {
+  position: relative;
+  width: 100%;
+  min-height: 324px;
+  aspect-ratio: 5 / 3;
+}
+
+.page-portfolio .book-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.page-portfolio #piezas-varias {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.page-portfolio .flex-row {
+  display: flex;
+  gap: 16px;
+  min-height: 280px;
+}
+
+.page-portfolio .col-item {
+  flex: 1;
+}
+
+.page-portfolio .col-item.wide {
+  flex: 2;
+}
+
+.page-portfolio .col-item.bio-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 15px;
+}
+
+.page-portfolio .stacked-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.page-portfolio .stacked-col .card {
+  flex: 1;
+}
+
+.page-portfolio footer {
+  align-items: center;
+  margin-top: 80px;
+  padding-top: 20px;
+  border-top: 0;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.page-portfolio .redes {
+  display: flex;
+  gap: 40px;
+}
+
+.page-portfolio .redes a {
+  color: var(--text-white);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.page-portfolio .redes a:hover {
+  color: var(--accent-red);
+}
+
+@media (max-width: 992px) {
+  .page-portfolio {
+    padding: 30px 20px;
+  }
+
+  .page-portfolio #principales {
+    height: 260px;
+  }
+
+  .page-portfolio #trabajo-destacado {
+    flex-direction: column;
+  }
+
+  .page-portfolio #trabajo-destacado .col-right {
+    padding: 20px 0;
+  }
+
+  .page-portfolio .flex-row {
+    flex-direction: column;
+  }
+
+  .page-portfolio .col-item.wide,
+  .page-portfolio .col-item {
+    width: 100%;
+    height: 220px;
+  }
+
+  .page-portfolio .col-item.bio-text {
+    height: auto;
+    padding: 20px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .page-portfolio header {
+    gap: 20px;
+  }
+
+  .page-portfolio main#porfolio > h1 {
+    font-size: 38px;
+  }
+
+  .page-portfolio #principales,
+  .page-portfolio #pequenas-piezas {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .page-portfolio #principales .card {
+    height: 200px;
+  }
+
+  .page-portfolio #pequenas-piezas .card {
+    height: 80px;
+  }
+
+  .page-portfolio #trabajo-destacado .col-left {
+    flex-direction: column;
+  }
+}
+
+/* ==========================================
+   CONTACTO
+   ========================================== */
+.page-contact {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.page-contact main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-contact section {
+  width: 100%;
+}
+
+.page-contact h1 {
+  max-width: 450px;
+  margin-bottom: 40px;
+  font-family: 'Archivo', sans-serif;
+  font-size: 52px;
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+
+.page-contact h1 span,
+.page-contact h2 span {
+  color: #ff1a1a;
+}
+
+.page-contact form {
+  display: flex;
+  max-width: 680px;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 50px;
+}
+
+.page-contact .form-row {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+}
+
+.page-contact .field-group {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.page-contact .field-group.full-width {
+  width: 100%;
+}
+
+.page-contact .field-group.half-width {
+  max-width: 50%;
+}
+
+.page-contact label {
+  color: #ffffff;
+  font-family: 'Archivo', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.page-contact input[type="text"],
+.page-contact textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  background-color: #8c8c8c;
+  color: #0d0d0d;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 13px;
+  font-style: italic;
+}
+
+.page-contact input[type="text"]::placeholder,
+.page-contact textarea::placeholder {
+  color: #333333;
+  font-family: 'Libre Baskerville', serif;
+  font-style: italic;
+}
+
+.page-contact textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.page-contact .file-upload {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background-color: #8c8c8c;
+}
+
+.page-contact .upload-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #1a1a1a;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 13px;
+  font-style: italic;
+}
+
+.page-contact .upload-info .icon {
+  width: 24px;
+  height: 24px;
+  fill: #1a1a1a;
+}
+
+.page-contact .btn-upload {
+  padding: 10px 20px;
+  background-color: #0d0d0d;
+  color: #ffffff;
+  font-family: 'Archivo', sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.page-contact input[type="file"] {
+  display: none;
+}
+
+.page-contact h2 {
+  margin-bottom: 12px;
+  color: #ffffff;
+  font-family: 'Archivo', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.page-contact h2 span {
+  margin-right: 2px;
+}
+
+.page-contact .direct-contact {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 60px;
+}
+
+.page-contact .direct-contact .icon-mail {
+  width: 20px;
+  height: 20px;
+  fill: #ffffff;
+}
+
+.page-contact .direct-contact a {
+  color: #ffffff;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 13px;
+  font-style: italic;
+  text-decoration: none;
+}
+
+.page-contact footer {
+  align-items: center;
+  padding-top: 20px;
+  border-top: 1px solid #1a1a1a;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.page-contact footer p {
+  color: #ffffff;
+}
+
+.page-contact .social-links {
+  gap: 40px;
+}
+
+.page-contact .social-links a {
+  transition: opacity 0.2s ease;
+}
+
+.page-contact .social-links a:hover {
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .page-contact {
+    padding: 24px 20px;
+  }
+
+  .page-contact header {
+    margin-bottom: 40px;
+  }
+
+  .page-contact .form-row {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .page-contact .field-group.half-width {
+    max-width: 100%;
+  }
+
+  .page-contact .file-upload {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+  }
+}

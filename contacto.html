@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insausti Federico - Contacto</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Google Fonts: Archivo (sans-serif) y Libre Baskerville (italic) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400..900;1,400..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+
+    <!-- Hoja de estilos -->
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="reveal.css">
+</head>
+
+<body class="page-contact">
+
+  <header>
+    <div class="logo">F<span>.</span></div>
+    <nav>
+      <a href="index.html" class="boton-head">SOBRE MÍ</a>
+      <a href="porfolio.html" class="boton-head">PORFOLIO</a>
+      <a href="contacto.html" class="boton-head">CONTACTO</a>
+    </nav>
+  </header>
+
+    <main>
+        <section>
+            <h1 data-reveal>TRABAJEMOS<br>JUNTOS<span>.</span></h1>
+
+            <form action="#" method="post" enctype="multipart/form-data">
+
+                <div class="field-group full-width" data-reveal>
+                    <label for="bocetos">Bocetos</label>
+                    <div class="file-upload">
+                        <div class="upload-info">
+                            <svg class="icon" viewBox="0 0 24 24">
+                                <path
+                                    d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z" />
+                            </svg>
+                            <span>Cargar img con bocetos | Max 2mb x Imagen</span>
+                        </div>
+                        <label for="bocetos" class="btn-upload">Cargar</label>
+                        <input type="file" id="bocetos" name="bocetos" accept="image/*">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="field-group" data-reveal>
+                        <label for="nombre">Apellido-Nombre</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Insausti Federico">
+                    </div>
+
+                    <div class="field-group" data-reveal>
+                        <label for="contacto">Contacto</label>
+                        <input type="text" id="contacto" name="contacto"
+                            placeholder="+54 11 1234 5678 / e-mail@gmail.com">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="field-group half-width" data-reveal>
+                        <label for="empresa">Empresa</label>
+                        <input type="text" id="empresa" name="empresa" placeholder="3Dreve">
+                    </div>
+                </div>
+
+                <div class="field-group full-width" data-reveal>
+                    <label for="propuesta">Descripción de propuesta</label>
+                    <textarea id="propuesta" name="propuesta" rows="4"
+                        placeholder="Quiero proponerte realizar mi identidad porque...."></textarea>
+                </div>
+
+            </form>
+        </section>
+
+        <section>
+            <h2 data-reveal><span>«</span>contacto</h2>
+            <div class="direct-contact" data-reveal>
+                <svg class="icon-mail" viewBox="0 0 24 24">
+                    <path
+                        d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                </svg>
+                <a href="mailto:fededreve@gmail.com">fededreve@gmail.com</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>SITE CONTENT <span class="copy-symbol">©</span> INSAUSTI FEDERICO ALL RIGHTS RESERVED</p>
+        <div class="social-links">
+            <a href="#" target="_blank" rel="noopener">Instagram</a>
+            <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+    </footer>
+
+    <script src="reveal.js"></script>
+</body>
+
+</html>
