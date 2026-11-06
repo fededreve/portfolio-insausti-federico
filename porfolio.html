@@ -13,8 +13,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-       href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400..900;1,400..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
-    rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400..900;1,400..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
 
     <!-- Hoja de estilos externa -->
     <link rel="stylesheet" href="estilos.css">
@@ -23,14 +23,14 @@
 
 <body class="page-portfolio">
 
- <header>
-    <div class="logo">F<span>.</span></div>
-    <nav>
-      <a href="index.html" class="boton-head">SOBRE MÍ</a>
-      <a href="porfolio.html" class="boton-head">PORFOLIO</a>
-      <a href="contacto.html" class="boton-head">CONTACTO</a>
-    </nav>
-  </header>
+    <header>
+        <div class="logo">F<span>.</span></div>
+        <nav>
+            <a href="index.html" class="boton-head">SOBRE MÍ</a>
+            <a href="porfolio.html" class="boton-head">PORFOLIO</a>
+            <a href="contacto.html" class="boton-head">CONTACTO</a>
+        </nav>
+    </header>
 
     <main id="porfolio">
         <h1 data-reveal>PROYECTOS<br>DESTACADOS<span class="dot">.</span></h1>
@@ -109,12 +109,19 @@
         <!-- Libro interactivo -->
         <section id="libro" data-reveal>
             <h2>LIBRO INTERACTIVO</h2>
-            <div class="book-embed">
-                <iframe
-                    src="https://online.fliphtml5.com/ahfcn/cwje/"
-                    title="INSAUSTI_FEDERICO_TP2"
-                    allowfullscreen>
-                </iframe>
+            <div class="book-reader">
+                <div class="book-stage" role="region" aria-label="Visor del libro">
+                    <div class="book-pages" id="book-pages" aria-live="polite">
+                        <div class="book-page"><canvas id="book-left"></canvas></div>
+                        <div class="book-page is-hidden"><canvas id="book-right"></canvas></div>
+                    </div>
+                </div>
+                <div class="book-controls">
+                    <button id="book-prev" type="button" disabled aria-label="Página anterior">Anterior</button>
+                    <span class="book-status" id="book-status" role="status">Cargando libro…</span>
+                    <button id="book-next" type="button" disabled aria-label="Página siguiente">Siguiente</button>
+                </div>
+                <p class="book-error is-hidden" id="book-error" role="alert"></p>
             </div>
         </section>
 
@@ -172,6 +179,110 @@
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+        (() => {
+            const pdfUrl = "pdf/libro-interactivo.pdf";
+            const leftCanvas = document.querySelector("#book-left");
+            const rightCanvas = document.querySelector("#book-right");
+            const pages = document.querySelector("#book-pages");
+            const status = document.querySelector("#book-status");
+            const previous = document.querySelector("#book-prev");
+            const next = document.querySelector("#book-next");
+            const errorMessage = document.querySelector("#book-error");
+            let pdfDocument;
+            let firstPage = 1;
+            let rendering = false;
+
+            const isMobile = () => window.matchMedia("(max-width: 680px)").matches;
+
+            async function renderPage(pageNumber, canvas) {
+                const page = await pdfDocument.getPage(pageNumber);
+                const availableWidth = Math.max(180, (pages.clientWidth - 24) / (isMobile() ? 1 : 2));
+                const scale = Math.min(availableWidth / page.getViewport({ scale: 1 }).width, 1.5);
+                const viewport = page.getViewport({ scale });
+                const pixelRatio = window.devicePixelRatio || 1;
+                const context = canvas.getContext("2d");
+                canvas.width = Math.floor(viewport.width * pixelRatio);
+                canvas.height = Math.floor(viewport.height * pixelRatio);
+                await page.render({
+                    canvasContext: context,
+                    viewport,
+                    transform: pixelRatio === 1 ? null : [pixelRatio, 0, 0, pixelRatio, 0, 0]
+                }).promise;
+            }
+
+            async function showPages(animate = false) {
+                if (!pdfDocument || rendering) return;
+                rendering = true;
+                previous.disabled = true;
+                next.disabled = true;
+                if (animate) {
+                    pages.classList.remove("turning");
+                    void pages.offsetWidth;
+                    pages.classList.add("turning");
+                }
+                try {
+                    await renderPage(firstPage, leftCanvas);
+                    const rightPage = firstPage + 1;
+                    if (!isMobile() && rightPage <= pdfDocument.numPages) {
+                        rightCanvas.parentElement.classList.remove("is-hidden");
+                        await renderPage(rightPage, rightCanvas);
+                    } else {
+                        rightCanvas.parentElement.classList.add("is-hidden");
+                    }
+                    status.textContent = isMobile() || rightPage > pdfDocument.numPages
+                        ? `Página ${firstPage} de ${pdfDocument.numPages}`
+                        : `Páginas ${firstPage}-${rightPage} de ${pdfDocument.numPages}`;
+                    previous.disabled = firstPage === 1;
+                    next.disabled = firstPage + (isMobile() ? 1 : 2) > pdfDocument.numPages;
+                } catch (error) {
+                    errorMessage.textContent = "No se pudo mostrar esta página del PDF.";
+                    errorMessage.classList.remove("is-hidden");
+                    console.error(error);
+                } finally {
+                    rendering = false;
+                }
+            }
+
+            previous.addEventListener("click", () => {
+                firstPage = Math.max(1, firstPage - (isMobile() ? 1 : 2));
+                showPages(true);
+            });
+            next.addEventListener("click", () => {
+                firstPage = Math.min(pdfDocument.numPages, firstPage + (isMobile() ? 1 : 2));
+                showPages(true);
+            });
+            window.addEventListener("resize", () => {
+                if (pdfDocument) showPages();
+            });
+
+            if (!window.pdfjsLib) {
+                status.textContent = "No se pudo cargar el visor de PDF.";
+                errorMessage.textContent = "Comprueba tu conexión a internet para cargar el visor.";
+                errorMessage.classList.remove("is-hidden");
+                return;
+            }
+            pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+            pdfjsLib.getDocument(pdfUrl).promise.then((document) => {
+                pdfDocument = document;
+                showPages();
+            }).catch((error) => {
+                status.textContent = "No se pudo cargar el libro.";
+                const isLocalFile = window.location.protocol === "file:";
+                errorMessage.textContent = isLocalFile
+                    ? "Abriste el HTML directamente desde el disco. Chrome puede bloquear el acceso al PDF; inicia el sitio con Live Server y conserva el archivo "
+                    : `No se pudo acceder al PDF. Comprueba que el sitio incluya el archivo `;
+                const pdfLink = document.createElement("a");
+                pdfLink.href = pdfUrl;
+                pdfLink.textContent = pdfUrl;
+                errorMessage.append(pdfLink, " y vuelve a cargar la página.");
+                errorMessage.classList.remove("is-hidden");
+                console.error(error);
+            });
+        })();
+
+    </script>
     <script>
         const video = document.querySelector("#video video");
 

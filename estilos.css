@@ -467,19 +467,113 @@ footer {
   font-weight: 900;
 }
 
-.page-portfolio .book-embed {
-  position: relative;
+.page-portfolio .book-reader {
   width: 100%;
-  min-height: 324px;
-  aspect-ratio: 5 / 3;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-.page-portfolio .book-embed iframe {
-  position: absolute;
-  inset: 0;
+.page-portfolio .book-stage {
+  display: flex;
+  min-height: 360px;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: #e9e6e2;
+  perspective: 1400px;
+}
+
+.page-portfolio .book-pages {
+  display: flex;
   width: 100%;
-  height: 100%;
+  justify-content: center;
+}
+
+.page-portfolio .book-page {
+  display: flex;
+  flex: 1 1 0;
+  min-width: 0;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 8px 24px #0002;
+}
+
+.page-portfolio .book-page.is-hidden,
+.page-portfolio .book-error.is-hidden {
+  display: none;
+}
+
+.page-portfolio .book-page canvas {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.page-portfolio .book-page + .book-page {
+  border-left: 1px solid #ddd;
+}
+
+.page-portfolio .book-pages.turning {
+  animation: book-turn 0.35s ease;
+}
+
+.page-portfolio .book-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 16px;
+}
+
+.page-portfolio .book-controls button {
+  padding: 10px 18px;
   border: 0;
+  background: var(--accent-red);
+  color: var(--text-white);
+  font: inherit;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.page-portfolio .book-controls button:hover:not(:disabled) {
+  opacity: 0.8;
+}
+
+.page-portfolio .book-controls button:focus-visible {
+  outline: 2px solid var(--accent-red);
+  outline-offset: 3px;
+}
+
+.page-portfolio .book-controls button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.page-portfolio .book-status {
+  min-width: 130px;
+  text-align: center;
+}
+
+.page-portfolio .book-error {
+  margin-top: 12px;
+  color: var(--accent-red);
+  text-align: center;
+}
+
+.page-portfolio .book-error a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@keyframes book-turn {
+  50% {
+    transform: rotateY(-8deg);
+    opacity: 0.65;
+  }
 }
 
 .page-portfolio #piezas-varias {
@@ -577,6 +671,25 @@ footer {
   }
 }
 
+@media (max-width: 680px) {
+  .page-portfolio .book-stage {
+    min-height: 280px;
+    padding: 12px;
+  }
+
+  .page-portfolio .book-page + .book-page {
+    display: none;
+  }
+
+  .page-portfolio .book-controls {
+    gap: 8px;
+  }
+
+  .page-portfolio .book-controls button {
+    padding: 9px 12px;
+  }
+}
+
 @media (max-width: 600px) {
   .page-portfolio header {
     gap: 20px;
@@ -602,6 +715,12 @@ footer {
 
   .page-portfolio #trabajo-destacado .col-left {
     flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-portfolio .book-pages.turning {
+    animation: none;
   }
 }
 
