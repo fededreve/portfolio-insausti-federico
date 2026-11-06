@@ -7,7 +7,7 @@
     <title>Insausti Federico - Contacto</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png" href="img/F-logofabicon.png">
 
     <!-- Google Fonts: Archivo (sans-serif) y Libre Baskerville (italic) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,49 +36,80 @@
         <section>
             <h1 data-reveal>TRABAJEMOS<br>JUNTOS<span>.</span></h1>
 
-            <form action="#" method="post" enctype="multipart/form-data">
+            <form action="https://formsubmit.io/f/feb82d72-160c-404a-a0c5-b6f20b343478" method="POST"
+                enctype="multipart/form-data">
+                <div class="form-row">
+                    <div class="field-group" data-reveal>
+                        <label for="company-name">Nombre de la empresa</label>
+                        <input type="text" id="company-name" name="Company name" required>
+                    </div>
 
-                <div class="field-group full-width" data-reveal>
-                    <label for="bocetos">Bocetos</label>
-                    <div class="file-upload">
-                        <div class="upload-info">
-                            <svg class="icon" viewBox="0 0 24 24">
-                                <path
-                                    d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z" />
-                            </svg>
-                            <span>Cargar img con bocetos | Max 2mb x Imagen</span>
-                        </div>
-                        <label for="bocetos" class="btn-upload">Cargar</label>
-                        <input type="file" id="bocetos" name="bocetos" accept="image/*">
+                    <div class="field-group" data-reveal>
+                        <label for="primary-contact">Persona de contacto</label>
+                        <input type="text" id="primary-contact" name="Primary contact" required>
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="field-group" data-reveal>
-                        <label for="nombre">Apellido-Nombre</label>
-                        <input type="text" id="nombre" name="nombre" placeholder="Insausti Federico">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" name="Email" required>
                     </div>
 
                     <div class="field-group" data-reveal>
-                        <label for="contacto">Contacto</label>
-                        <input type="text" id="contacto" name="contacto"
-                            placeholder="+54 11 1234 5678 / e-mail@gmail.com">
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="field-group half-width" data-reveal>
-                        <label for="empresa">Empresa</label>
-                        <input type="text" id="empresa" name="empresa" placeholder="3Dreve">
+                        <label for="phone">Teléfono</label>
+                        <input type="tel" id="phone" name="Phone">
                     </div>
                 </div>
 
                 <div class="field-group full-width" data-reveal>
-                    <label for="propuesta">Descripción de propuesta</label>
-                    <textarea id="propuesta" name="propuesta" rows="4"
-                        placeholder="Quiero proponerte realizar mi identidad porque...."></textarea>
+                    <label for="billing-address">Dirección de facturación</label>
+                    <input type="text" id="billing-address" name="Billing address">
                 </div>
 
+                <div class="form-row">
+                    <div class="field-group" data-reveal>
+                        <label for="industry">Industria</label>
+                        <select id="industry" name="Industry">
+                            <option value="">Seleccioná una industria</option>
+                            <option value="SaaS">SaaS</option>
+                            <option value="E-commerce">Comercio electrónico</option>
+                            <option value="Agency">Agencia</option>
+                            <option value="Finance">Finanzas</option>
+                            <option value="Healthcare">Salud</option>
+                            <option value="Other">Otra</option>
+                        </select>
+                    </div>
+
+                    <div class="field-group" data-reveal>
+                        <label for="engagement-type">Tipo de contratación</label>
+                        <select id="engagement-type" name="Engagement type" required>
+                            <option value="">Seleccioná una opción</option>
+                            <option value="Retainer">Abono mensual</option>
+                            <option value="Project">Proyecto</option>
+                            <option value="Consultation">Consulta</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="field-group full-width" data-reveal>
+                    <label for="target-start-date">Fecha de inicio estimada</label>
+                    <input type="date" id="target-start-date" name="Target start date">
+                </div>
+
+                <div class="field-group full-width" data-reveal>
+                    <label for="goals">Objetivos del proyecto</label>
+                    <textarea id="goals" name="Goals for the engagement" rows="4" required></textarea>
+                </div>
+
+                <div class="field-group full-width" data-reveal>
+                    <label for="brand-assets">Archivos de marca o brief</label>
+                    <input type="file" id="brand-assets" name="Brand assets or brief">
+                </div>
+
+                <input type="text" name="_formsubmit_id" tabindex="-1" autocomplete="off" hidden>
+
+                <button class="btn-submit" type="submit">Enviar formulario</button>
             </form>
         </section>
 

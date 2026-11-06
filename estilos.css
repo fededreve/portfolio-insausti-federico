@@ -666,7 +666,8 @@ footer {
 }
 
 .page-contact .field-group.half-width {
-  max-width: 50%;
+  flex: none;
+  width: 50%;
 }
 
 .page-contact label {
@@ -677,6 +678,10 @@ footer {
 }
 
 .page-contact input[type="text"],
+.page-contact input[type="email"],
+.page-contact input[type="tel"],
+.page-contact input[type="date"],
+.page-contact select,
 .page-contact textarea {
   width: 100%;
   padding: 14px 16px;
@@ -688,6 +693,10 @@ footer {
   font-family: 'Libre Baskerville', serif;
   font-size: 13px;
   font-style: italic;
+}
+
+.page-contact select {
+  min-height: 46px;
 }
 
 .page-contact input[type="text"]::placeholder,
@@ -702,45 +711,35 @@ footer {
   resize: vertical;
 }
 
-.page-contact .file-upload {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 16px;
-  background-color: #8c8c8c;
-}
-
-.page-contact .upload-info {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  color: #1a1a1a;
-  font-family: 'Libre Baskerville', serif;
-  font-size: 13px;
-  font-style: italic;
-}
-
-.page-contact .upload-info .icon {
-  width: 24px;
-  height: 24px;
-  fill: #1a1a1a;
-}
-
-.page-contact .btn-upload {
-  padding: 10px 20px;
-  background-color: #0d0d0d;
+.page-contact input[type="file"] {
+  width: 100%;
   color: #ffffff;
   font-family: 'Archivo', sans-serif;
-  font-size: 12px;
-  font-style: normal;
+  font-size: 13px;
+}
+
+.page-contact .btn-submit {
+  align-self: flex-start;
+  padding: 14px 24px;
+  border: 0;
+  background-color: #ff1a1a;
+  color: #ffffff;
+  font-family: 'Archivo', sans-serif;
+  font-size: 13px;
   font-weight: 800;
   letter-spacing: 1px;
   text-transform: uppercase;
   cursor: pointer;
+  transition: opacity 0.2s ease;
 }
 
-.page-contact input[type="file"] {
-  display: none;
+.page-contact .btn-submit:hover {
+  opacity: 0.8;
+}
+
+.page-contact .btn-submit:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
 }
 
 .page-contact h2 {
@@ -816,12 +815,7 @@ footer {
   }
 
   .page-contact .field-group.half-width {
-    max-width: 100%;
+    width: 100%;
   }
 
-  .page-contact .file-upload {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 14px;
-  }
 }
