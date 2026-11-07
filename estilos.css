@@ -12,7 +12,7 @@ body {
   color: #ffffff;
   font-family: 'Archivo', sans-serif;
   line-height: 1.5;
-  padding: 20px 163px;
+  padding: 20px 100px;
   max-width: 1920px;
 }
 
@@ -36,7 +36,7 @@ nav {
    ========================================== */
 .logo {
   font-family: 'Libre Baskerville', Georgia, serif;
-  font-size: 2.8rem;
+  font-size: 44.8px;
   font-weight: 700;
   letter-spacing: -1px;
 }
@@ -48,7 +48,7 @@ nav {
 .boton-head {
   color: #ffffff;
   text-decoration: none;
-  font-size: 0.8rem;
+  font-size: 12.8px;
   font-weight: 700;
   font-family: 'Archivo', sans-serif;
   letter-spacing: 1.5px;
@@ -72,7 +72,7 @@ nav {
 
 .titulo-principal {
   font-family: 'Archivo', sans-serif;
-  font-size: 5rem;
+  font-size: 80px;
   font-weight: 900;
   line-height: 1;
   letter-spacing: 2px;
@@ -110,7 +110,7 @@ nav {
 .texto-serif {
   font-family: 'Libre Baskerville', Georgia, serif;
   font-style: italic;
-  font-size: 1.05rem;
+  font-size: 16.8px;
   color: #cccccc;
   line-height: 1.6;
 }
@@ -130,7 +130,7 @@ nav {
 
 .titulo-hola {
   font-family: 'Archivo', sans-serif;
-  font-size: 2.8rem;
+  font-size: 44.8px;
   font-weight: 900;
   margin-bottom: 24px;
   display: flex;
@@ -160,7 +160,7 @@ nav {
 
 .titulo-seccion {
   font-family: 'Archivo', sans-serif;
-  font-size: 1.3rem;
+  font-size: 20.8px;
   font-weight: 900;
   letter-spacing: 2px;
   margin-bottom: 32px;
@@ -189,21 +189,6 @@ nav {
   object-fit: contain;
 }
 
-.card-cliente img.logo-mi-mejor-receta {
-  width: 200px;
-  height: 106px;
-}
-
-.card-cliente img.logo-gabriel {
-  width: 247px;
-  height: 101px;
-}
-
-.card-cliente img.logo-geografica {
-  width: 232px;
-  height: 115px;
-}
-
 /* ==========================================
    FOOTER
    ========================================== */
@@ -217,7 +202,7 @@ footer {
 
 .copyright {
   font-family: 'Archivo', sans-serif;
-  font-size: 0.95rem;
+  font-size: 15.2px;
   font-weight: 900;
   line-height: 1.4;
   letter-spacing: 1px;
@@ -236,7 +221,7 @@ footer {
   color: #ffffff;
   text-decoration: none;
   font-family: 'Archivo', sans-serif;
-  font-size: 0.85rem;
+  font-size: 13.6px;
   font-weight: 700;
   letter-spacing: 1px;
   transition: opacity 0.2s ease;
@@ -261,7 +246,7 @@ footer {
   }
 
   .titulo-principal {
-    font-size: 3.5rem;
+    font-size: 56px;
     max-width: 100%;
   }
 
@@ -408,7 +393,7 @@ footer {
 .page-portfolio #pequenas-piezas {
   display: flex;
   gap: 16px;
-  height: 100px;
+  height: 115px;
 }
 
 .page-portfolio #pequenas-piezas .card {
@@ -729,7 +714,7 @@ footer {
    ========================================== */
 .page-contact {
   display: flex;
-  min-height: 100vh;
+  min-height: 1080px;
   flex-direction: column;
 }
 

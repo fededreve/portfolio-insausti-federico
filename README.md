@@ -27,7 +27,7 @@ Puedes consultar el diseño y prototipo del proyecto en Figma a través del sigu
 
 ---
 
-## 👤 Autor / Integrantes
+## 👤 Autor 
 * **Nombre:** [Insausti Casale Federico Ezequiel]
 * **Comisión / Curso:** [Wischñevsky | Computación III]# portfolio-insausti-federico
 # portfolio-insausti-federico
