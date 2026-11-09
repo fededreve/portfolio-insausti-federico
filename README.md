@@ -24,6 +24,7 @@ Puedes consultar el diseño y prototipo del proyecto en Figma a través del sigu
 
 * HTML5
 * CSS3
+* JavaScript
 
 ---
 
