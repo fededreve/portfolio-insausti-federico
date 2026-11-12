@@ -7,14 +7,7 @@
     <title>Insausti Federico - Contacto</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/webp" href="img/F-logofabicon.webp">
-
-    <!-- Google Fonts: Archivo (sans-serif) y Libre Baskerville (italic) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400..900;1,400..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
-    rel="stylesheet">
+    <link rel="icon" type="image/webp" href="img/f-logofabicon.webp">
 
     <!-- Hoja de estilos -->
     <link rel="stylesheet" href="estilos.css">
@@ -22,14 +15,14 @@
 
 <body class="page-contact">
 
-  <header>
-    <div class="logo" aria-label="Federico Insausti">F</div>
-    <nav>
-      <a href="index.html" class="boton-head">SOBRE MÍ</a>
-      <a href="porfolio.html" class="boton-head">PORFOLIO</a>
-      <a href="contacto.html" class="boton-head">CONTACTO</a>
-    </nav>
-  </header>
+    <header>
+        <div class="logo" aria-label="Federico Insausti">F</div>
+        <nav>
+            <a href="index.html" class="boton-head">SOBRE MÍ</a>
+            <a href="porfolio.html" class="boton-head">PORFOLIO</a>
+            <a href="contacto.html" class="boton-head">CONTACTO</a>
+        </nav>
+    </header>
 
     <main>
         <section>
@@ -38,36 +31,36 @@
             <form action="https://formsubmit.io/f/feb82d72-160c-404a-a0c5-b6f20b343478" method="POST"
                 enctype="multipart/form-data">
                 <div class="form-row">
-                    <div class="field-group" data-reveal>
+                    <div class="field-group">
                         <label for="company-name">Nombre de la empresa</label>
                         <input type="text" id="company-name" name="Company name" required>
                     </div>
 
-                    <div class="field-group" data-reveal>
+                    <div class="field-group">
                         <label for="primary-contact">Persona de contacto</label>
                         <input type="text" id="primary-contact" name="Primary contact" required>
                     </div>
                 </div>
 
                 <div class="form-row">
-                    <div class="field-group" data-reveal>
+                    <div class="field-group">
                         <label for="email">Correo electrónico</label>
                         <input type="email" id="email" name="Email" required>
                     </div>
 
-                    <div class="field-group" data-reveal>
+                    <div class="field-group">
                         <label for="phone">Teléfono</label>
                         <input type="tel" id="phone" name="Phone">
                     </div>
                 </div>
 
-                <div class="field-group full-width" data-reveal>
+                <div class="field-group full-width">
                     <label for="billing-address">Dirección de facturación</label>
                     <input type="text" id="billing-address" name="Billing address">
                 </div>
 
                 <div class="form-row">
-                    <div class="field-group" data-reveal>
+                    <div class="field-group">
                         <label for="industry">Industria</label>
                         <select id="industry" name="Industry">
                             <option value="">Seleccioná una industria</option>
@@ -80,7 +73,7 @@
                         </select>
                     </div>
 
-                    <div class="field-group" data-reveal>
+                    <div class="field-group">
                         <label for="engagement-type">Tipo de contratación</label>
                         <select id="engagement-type" name="Engagement type" required>
                             <option value="">Seleccioná una opción</option>
@@ -91,17 +84,17 @@
                     </div>
                 </div>
 
-                <div class="field-group full-width" data-reveal>
+                <div class="field-group full-width">
                     <label for="target-start-date">Fecha de inicio estimada</label>
                     <input type="date" id="target-start-date" name="Target start date">
                 </div>
 
-                <div class="field-group full-width" data-reveal>
+                <div class="field-group full-width">
                     <label for="goals">Objetivos del proyecto</label>
                     <textarea id="goals" name="Goals for the engagement" rows="4" required></textarea>
                 </div>
 
-                <div class="field-group full-width" data-reveal>
+                <div class="field-group full-width">
                     <label for="brand-assets">Archivos de marca o brief</label>
                     <input type="file" id="brand-assets" name="Brand assets or brief">
                 </div>
@@ -113,8 +106,8 @@
         </section>
 
         <section>
-            <h2 data-reveal>contacto</h2>
-            <div class="direct-contact" data-reveal>
+            <h2>contacto</h2>
+            <div class="direct-contact">
                 <svg class="icon-mail" viewBox="0 0 24 24">
                     <path
                         d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
@@ -128,11 +121,11 @@
         <p class="copyright">SITE CONTENT INSAUSTI FEDERICO ALL RIGHTS RESERVED</p>
         <div class="social-links">
             <a href="https://www.instagram.com/3dreve/" target="_blank" rel="noopener">Instagram</a>
-            <a href="https://www.linkedin.com/in/federico-ezequiel-insausti-casale/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/federico-ezequiel-insausti-casale/" target="_blank"
+                rel="noopener">LinkedIn</a>
         </div>
     </footer>
-
-    <script src="reveal.js"></script>
+    <script src="scroll-animations.js"></script>
 </body>
 
 </html>
