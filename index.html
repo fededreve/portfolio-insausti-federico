@@ -7,10 +7,9 @@
     <title>Portfolio Federico Insausti</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="img/F-logofabicon.webp">
+    <link rel="icon" type="image/webp" href="img/F-logofabicon.webp">
 
     <link rel="stylesheet" href="estilos.css">
-    <link rel="stylesheet" href="reveal.css">
 
     <!-- Google Fonts: Archivo y Libre Baskerville -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +23,7 @@
 
     <!-- ENCABEZADO Y NAVEGACIÓN -->
     <header>
-      <div class="logo">F<span>.</span></div>
+      <div class="logo" aria-label="Federico Insausti">F</div>
       <nav>
         <a href="index.html" class="boton-head">SOBRE MÍ</a>
         <a href="porfolio.html" class="boton-head">PORFOLIO</a>
@@ -37,12 +36,14 @@
 
       <!-- SECCIÓN FOTO -->
       <section class="seccion-foto" data-reveal>
-        <p class="titulo-principal">
-          DISEÑA DOR<span class="dot-red">.</span>
-        </p>
+        <h2 class="titulo-principal" aria-label="Diseñador">
+          <p >DISE</p>
+          <p>ÑA</p> 
+          <p class="titulo-final" >DOR</p>
+        </h2>
 
         <div class="col-foto">
-          <img src="img/fotoporfolio.webp" alt="Foto de Federico Insaust" class="foto-perfil" width="460" height="500">
+          <img src="img/fotoporfolio.webp" alt="Retrato de Federico Insausti" class="foto-perfil" width="460" height="500">
         </div>
 
         <div class="col-descripcion">
@@ -59,7 +60,7 @@
       <!-- SECCIÓN HOLA -->
       <section class="seccion-hola" id="sobre-mi" data-reveal>
         <h1 class="titulo-hola">
-          <span class="quote-red">«</span>Hola, soy Federico
+          Hola, soy Federico
         </h1>
         <div class="texto-hola">
           <p class="texto-serif destacado">
@@ -77,7 +78,7 @@
       <section class="seccion-clientes" data-reveal>
         <h2 class="titulo-seccion">CLIENTES</h2>
 
-        <div class="grid-clientes">
+        <div class="clientes-list">
           <div class="card-cliente">
             <img src="img/logo-mimejorreceta.webp" alt="Mi Mejor Receta Alfajores" class="logo-mi-mejor-receta"
               width="200" height="106">
@@ -96,14 +97,11 @@
 
     <!-- PIE DE PÁGINA -->
     <footer>
-      <div class="copyright">
-        SITE CONTENT <span class="copy-symbol">©</span> INSAUST FEDERICO<br>
-        ALL RIGHTS RESERVED
-      </div>
+      <p class="copyright">SITE CONTENT INSAUSTI FEDERICO ALL RIGHTS RESERVED</p>
 
       <div class="social-links">
         <a href="https://www.instagram.com/3dreve/" target="_blank" rel="noopener">Instagram</a>
-        <a href="www.linkedin.com/in/federico-ezequiel-insausti-casale" target="_blank" rel="noopener">Linkedin</a>
+        <a href="https://www.linkedin.com/in/federico-ezequiel-insausti-casale" target="_blank" rel="noopener">Linkedin</a>
       </div>
     </footer>
 
