@@ -88,10 +88,14 @@ body.scroll-effects-ready .scroll-reveal:nth-child(5) {
    CABECERA Y NAVEGACIÓN 
    ========================================== */
 header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 24px 0 72px;
+  background-color: #0d0d0d;
 }
 
 nav {
@@ -180,10 +184,11 @@ nav {
 
 .texto-serif {
   font-family: 'Libre Baskerville', Georgia, serif;
-  font-style: italic;
-  font-size: 16.8px;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 400;
   color: #cccccc;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .texto-serif.destacado {
@@ -253,6 +258,11 @@ nav {
   justify-content: center;
   padding: 40px;
   border-radius: 2px;
+}
+
+.card-cliente:focus-visible {
+  outline: 2px solid #ff1a1a;
+  outline-offset: 4px;
 }
 
 .card-cliente img {
@@ -381,9 +391,10 @@ footer {
 .page-portfolio .bio-text {
   color: var(--text-white);
   font-family: var(--font-body);
-  font-size: 13px;
-  font-style: italic;
-  line-height: 1.6;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.7;
 }
 
 .page-portfolio .bio-text p {
@@ -455,6 +466,7 @@ footer {
   display: flex;
   gap: 16px;
   min-height: 380px;
+  scroll-margin-top: 210px;
 }
 
 .page-portfolio #principales .card {
