@@ -74,7 +74,8 @@
 
                 <div class="field-group full-width">
                     <label for="brand-assets">Archivos de marca o brief</label>
-                    <input type="file" id="brand-assets" name="Brand assets or brief">
+                    <input type="file" id="brand-assets" name="Brand assets or brief" accept="image/*" multiple>
+                    <div class="image-preview-list" id="image-preview-list" aria-live="polite"></div>
                 </div>
 
                 <input type="text" name="_formsubmit_id" tabindex="-1" autocomplete="off" hidden>
@@ -104,6 +105,7 @@
         </div>
     </footer>
     <script src="traductor.js"></script>
+    <script src="image-previews.js"></script>
     <script src="scroll-animations.js"></script>
 </body>
 
