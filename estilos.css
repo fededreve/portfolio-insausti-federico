@@ -103,6 +103,45 @@ nav {
   gap: 30px;
 }
 
+.language-switcher {
+  display: flex;
+  align-items: center;
+  min-height: 32px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+.language-switcher .language-select {
+  width: auto;
+  min-height: 32px;
+  margin: 0;
+  padding: 6px 10px;
+  border: 1px solid #444444;
+  border-radius: 0;
+  background-color: #0d0d0d;
+  color: #ffffff;
+  font-family: 'Archivo', sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color-scheme: dark;
+  cursor: pointer;
+}
+
+.language-switcher .language-select:focus-visible {
+  outline: 2px solid #ff1a1a;
+  outline-offset: 3px;
+}
+
 /* ==========================================
    ELEMENTOS GENERALES
    ========================================== */

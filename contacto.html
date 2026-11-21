@@ -22,6 +22,14 @@
             <a href="porfolio.html" class="boton-head">PORFOLIO</a>
             <a href="contacto.html" class="boton-head">CONTACTO</a>
         </nav>
+        <div class="language-switcher">
+            <label class="visually-hidden" for="site-language">Idioma del sitio</label>
+            <select class="language-select" id="site-language" aria-label="Idioma del sitio">
+                <option value="es">ESPAÑOL</option>
+                <option value="en">ENGLISH</option>
+                <option value="fr">FRANÇAIS</option>
+            </select>
+        </div>
     </header>
 
     <main>
@@ -51,36 +59,6 @@
                     <div class="field-group">
                         <label for="phone">Teléfono</label>
                         <input type="tel" id="phone" name="Phone">
-                    </div>
-                </div>
-
-                <div class="field-group full-width">
-                    <label for="billing-address">Dirección de facturación</label>
-                    <input type="text" id="billing-address" name="Billing address">
-                </div>
-
-                <div class="form-row">
-                    <div class="field-group">
-                        <label for="industry">Industria</label>
-                        <select id="industry" name="Industry">
-                            <option value="">Seleccioná una industria</option>
-                            <option value="SaaS">SaaS</option>
-                            <option value="E-commerce">Comercio electrónico</option>
-                            <option value="Agency">Agencia</option>
-                            <option value="Finance">Finanzas</option>
-                            <option value="Healthcare">Salud</option>
-                            <option value="Other">Otra</option>
-                        </select>
-                    </div>
-
-                    <div class="field-group">
-                        <label for="engagement-type">Tipo de contratación</label>
-                        <select id="engagement-type" name="Engagement type" required>
-                            <option value="">Seleccioná una opción</option>
-                            <option value="Retainer">Abono mensual</option>
-                            <option value="Project">Proyecto</option>
-                            <option value="Consultation">Consulta</option>
-                        </select>
                     </div>
                 </div>
 
@@ -125,6 +103,7 @@
                 rel="noopener">LinkedIn</a>
         </div>
     </footer>
+    <script src="traductor.js"></script>
     <script src="scroll-animations.js"></script>
 </body>
 
